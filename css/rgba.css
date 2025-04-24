@@ -1,0 +1,583 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #000000;
+    color: #ec0000;
+    line-height: 1.6;
+    padding: 2rem;
+    padding-top: 40px;
+}
+
+h1, h2, h3 {
+    color: #f0f0f0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    background: linear-gradient(90deg, #ff0000, #ff6b6b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+
+
+/* Main container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 40px;
+}
+
+/* Color picker section */
+.color-picker-section {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+}
+
+.color-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.color-preview {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.color-preview::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(45deg, #333 25%, transparent 25%), 
+        linear-gradient(-45deg, #333 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #333 75%), 
+        linear-gradient(-45deg, transparent 75%, #333 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    z-index: -1;
+}
+
+.color-info {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.color-code-container h3 {
+    margin-bottom: 0.5rem;
+}
+
+.code-display {
+    display: flex;
+    align-items: center;
+    background-color: #111;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    border-left: 3px solid #ff3333;
+}
+
+.code-display code {
+    flex: 1;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: #f0f0f0;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.copy-btn:hover {
+    color: #ff3333;
+}
+
+/* Color controls */
+.color-controls {
+    margin-top: 2rem;
+}
+
+.sliders {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.slider-container label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider-container label span {
+    font-weight: bold;
+    color: #ff3333;
+}
+
+.color-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 4px;
+    outline: none;
+}
+
+.color-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    cursor: pointer;
+    border: 2px solid #111;
+}
+
+.red-slider {
+    background: linear-gradient(to right, #000000, #ff0000);
+}
+
+.green-slider {
+    background: linear-gradient(to right, #000000, #00ff00);
+}
+
+.blue-slider {
+    background: linear-gradient(to right, #000000, #0000ff);
+}
+
+.alpha-slider {
+    background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+}
+
+.color-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.action-btn {
+    background-color: #333;
+    border: none;
+    color: #f0f0f0;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.action-btn:hover {
+    background-color: #ff3333;
+}
+
+/* Color presets section */
+.color-presets {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.color-presets h2 {
+    margin-bottom: 0.5rem;
+}
+
+.color-presets > p {
+    margin-bottom: 1.5rem;
+    color: #cccccc;
+}
+
+.preset-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.category-btn {
+    background-color: #333;
+    border: none;
+    color: #f0f0f0;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.category-btn:hover {
+    background-color: #444;
+}
+
+.category-btn.active {
+    background-color: #ff3333;
+}
+
+.preset-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 1rem;
+}
+
+.color-preset {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.color-preset:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Color patterns section */
+.color-patterns {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.color-patterns h2 {
+    margin-bottom: 0.5rem;
+}
+
+.color-patterns > p {
+    margin-bottom: 1.5rem;
+    color: #cccccc;
+}
+
+.patterns-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.pattern-card {
+    background-color: #111;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-top: 3px solid #ff3333;
+}
+
+.pattern-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.pattern-preview {
+    display: flex;
+    height: 40px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.pattern-color {
+    flex: 1;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.pattern-color:hover {
+    transform: scaleY(1.2);
+    z-index: 1;
+}
+
+.pattern-color::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 0.3rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+.pattern-color:hover::after {
+    opacity: 1;
+}
+
+/* Usage examples section */
+.usage-examples {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.usage-examples h2 {
+    margin-bottom: 1.5rem;
+}
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.example-card {
+    background-color: #111;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-top: 3px solid #ff3333;
+}
+
+.example-card h3 {
+    margin-bottom: 1rem;
+}
+
+.example-card pre {
+    background-color: #222;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+}
+
+.example-card code {
+    font-family: 'Courier New', monospace;
+    color: #f0f0f0;
+}
+
+.example-preview {
+    background-color: #222;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+/* Copy notification */
+.copy-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+    z-index: 1000;
+}
+
+.copy-notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.copy-notification i {
+    color: #4CAF50;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .color-display {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .color-preview {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .sliders {
+        grid-template-columns: 1fr;
+    }
+    
+    .preset-container {
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .color-picker-section, .color-presets, .color-patterns, .usage-examples {
+        padding: 1.5rem;
+    }
+    
+    .preset-container {
+        grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+        gap: 0.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Add these styles to rgba.css */
+
+/* Ensure the container maintains proper width */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Make sure the body takes full width */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #0a0a0a;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* Style the header and footer containers */
+#header, #footer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ensure content sections take full width */
+.color-picker-section,
+.color-presets,
+.color-patterns,
+.usage-examples {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Add proper spacing */
+.page-title {
+    margin-top: 2rem;
+}
+
+/* Make sure grid layouts work properly */
+.preset-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.patterns-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Ensure the page description has proper width */
+.page-description {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+/* Fix the color display section */
+.color-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Fix the color preview */
+.color-preview {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+}
+
+/* Fix the color info section */
+.color-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Fix the sliders section */
+.sliders {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* Fix the copy notification */
+.copy-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}

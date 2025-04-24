@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Color Generator</title>
+
+    <link rel="stylesheet" href="/color/css/gradient.css">
+
+    <script src="/color/js/gradient.js" defer></script>
+    <script src="/color/js/script.js"></script>
+    
+</head>
+<body>
+    <!-- header -->
+    <div id="header"></div>
+
+    <div class="container">
+        <header>
+            <h1>Gradient Color Generator</h1>
+            <p>Create beautiful CSS gradients with ease</p>
+        </header>
+
+        <!-- Section 1: Gradient Generator -->
+        <section id="generator">
+            <h2>Gradient Generator</h2>
+            
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="2">2 Colors</button>
+                <button class="mode-btn" data-mode="3">3 Colors</button>
+            </div>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <label for="gradient-type">Gradient Type:</label>
+                    <select id="gradient-type">
+                        <option value="linear">Linear</option>
+                        <option value="radial">Radial</option>
+                        <option value="conic">Conic</option>
+                    </select>
+                    
+                    <div id="angle-control">
+                        <label for="angle">Angle: <span id="angle-value">90</span>°</label>
+                        <input type="range" id="angle" min="0" max="360" value="90">
+                    </div>
+                    
+                    <div id="radial-shape-control" style="display: none;">
+                        <label for="radial-shape">Shape:</label>
+                        <select id="radial-shape">
+                            <option value="circle">Circle</option>
+                            <option value="ellipse">Ellipse</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label>Colors:</label>
+                    <div class="color-inputs" id="color-inputs">
+                        <div class="color-input">
+                            <input type="color" id="color1" value="#ff3333">
+                            <input type="text" id="color1-value" value="#ff3333">
+                            <div class="color-stop">
+                                <input type="range" id="color1-stop" min="0" max="100" value="0">
+                                <input type="number" id="color1-stop-value" min="0" max="100" value="0">%
+                            </div>
+                        </div>
+                        
+                        <div class="color-input">
+                            <input type="color" id="color2" value="#3333ff">
+                            <input type="text" id="color2-value" value="#3333ff">
+                            <div class="color-stop">
+                                <input type="range" id="color2-stop" min="0" max="100" value="100">
+                                <input type="number" id="color2-stop-value" min="0" max="100" value="100">%
+                            </div>
+                        </div>
+                        
+                        <div class="color-input" id="color3-container" >
+                            <input type="color" id="color3" value="#33ff33">
+                            <input type="text" id="color3-value" value="#33ff33">
+                            <div class="color-stop">
+                                <input type="range" id="color3-stop" min="0" max="100" value="50">
+                                <input type="number" id="color3-stop-value" min="0" max="100" value="50">%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preview" id="gradient-preview">
+                Preview
+            </div>
+            
+            <div class="code-output">
+                <pre id="css-code"></pre>
+                <button class="copy-btn" id="copy-btn">Copy</button>
+            </div>
+        </section>
+
+        <!-- Section 2: Random Gradients -->
+        <section id="random">
+            <h2>Random Gradient Inspirations</h2>
+            <div class="random-gradients" id="random-gradients"></div>
+            <button id="generate-random">Generate More</button>
+        </section>
+
+        <!-- Section 3: Examples -->
+        <section id="examples">
+            <h2>Gradient Examples</h2>
+            <div class="examples">
+                <div class="example-card">
+                    <div class="example-preview" style="background: linear-gradient(45deg, #ff3333, #3333ff);">
+                        Text on Gradient
+                    </div>
+                    <div class="example-code">
+                        <pre>/* Basic Linear Gradient */
+.element {
+  background: linear-gradient(45deg, #ff3333, #3333ff);
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}</pre>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-preview" style="background: radial-gradient(circle, #ff3333, #3333ff);">
+                        Radial Gradient
+                    </div>
+                    <div class="example-code">
+                        <pre>/* Radial Gradient */
+.element {
+  background: radial-gradient(circle, #ff3333, #3333ff);
+}</pre>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-preview" style="background: linear-gradient(to right, #ff3333, #3333ff); background-size: 200% 100%; animation: gradient-animation 3s infinite alternate;">
+                        Animated Gradient
+                    </div>
+                    <div class="example-code">
+                        <pre>/* Animated Gradient */
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.element {
+  background: linear-gradient(to right, #ff3333, #3333ff);
+  background-size: 200% 100%;
+  animation: gradient-animation 3s infinite alternate;
+}</pre>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-preview" style="background: conic-gradient(from 0deg, #ff3333, #3333ff, #33ff33, #ff3333);">
+                        Conic Gradient
+                    </div>
+                    <div class="example-code">
+                        <pre>/* Conic Gradient */
+.element {
+  background: conic-gradient(from 0deg, #ff3333, #3333ff, #33ff33, #ff3333);
+}</pre>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-preview" style="background: repeating-linear-gradient(45deg, #ff3333, #ff3333 10px, #3333ff 10px, #3333ff 20px);">
+                        Repeating Gradient
+                    </div>
+                    <div class="example-code">
+                        <pre>/* Repeating Gradient */
+.element {
+  background: repeating-linear-gradient(
+    45deg,
+    #ff3333,
+    #ff3333 10px,
+    #3333ff 10px,
+    #3333ff 20px
+  );
+}</pre>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-preview" style="background: linear-gradient(rgba(255, 51, 51, 0.8), rgba(51, 51, 255, 0.8)), url('/api/placeholder/400/320');">
+                        Gradient Overlay
+                    </div>
+                    <div class="example-code">
+                        <pre>/* Gradient Overlay on Image */
+.element {
+  background: linear-gradient(
+    rgba(255, 51, 51, 0.8),
+    rgba(51, 51, 255, 0.8)
+  ), url('image.jpg');
+  background-size: cover;
+}</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    
+    </div>
+
+    <!-- footer -->
+    <div id="footer"></div>
+</body>
+</html>

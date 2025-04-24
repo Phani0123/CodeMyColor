@@ -1,0 +1,854 @@
+/* Tutorials page styles */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #0a0a0a;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tutorials-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Hero section */
+.tutorials-hero {
+    background-color: #111;
+    border-radius: 10px;
+    padding: 4rem 2rem;
+    margin: 2rem 0;
+    text-align: center;
+    background-image: linear-gradient(45deg, rgba(255, 0, 0, 0.2), rgba(0, 0, 255, 0.2));
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.tutorials-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tutorials-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #ff0000, #ff6b6b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.tutorials-hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #cccccc;
+}
+
+.search-container {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#tutorialSearch {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 30px 0 0 30px;
+    background-color: #222;
+    color: #f0f0f0;
+    font-size: 1rem;
+}
+
+#searchButton {
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    background-color: #ff3333;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#searchButton:hover {
+    background-color: #ff5555;
+}
+
+/* Categories section */
+.tutorials-categories {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.category-btn {
+    background-color: #222;
+    border: none;
+    color: #f0f0f0;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.category-btn:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+.category-btn.active {
+    background-color: #ff3333;
+}
+
+/* Featured tutorial */
+.featured-tutorial {
+    margin: 3rem 0;
+}
+
+.featured-content {
+    display: flex;
+    background-color: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.featured-info {
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-label {
+    display: inline-block;
+    background-color: #ff3333;
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.featured-info h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #f0f0f0;
+}
+
+.featured-info p {
+    color: #cccccc;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.tutorial-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tutorial-tag {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tutorial-tag.beginner {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.tutorial-tag.intermediate {
+    background-color: #2196F3;
+    color: white;
+}
+
+.tutorial-tag.advanced {
+    background-color: #9C27B0;
+    color: white;
+}
+
+.tutorial-tag.design {
+    background-color: #FF9800;
+    color: white;
+}
+
+.reading-time {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.publish-date {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.featured-link {
+    display: inline-block;
+    background-color: #ff3333;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    align-self: flex-start;
+}
+
+.featured-link:hover {
+    background-color: #ff5555;
+    transform: translateY(-3px);
+}
+
+.featured-image {
+    flex: 1;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.featured-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+/* Tutorials grid */
+.tutorials-grid-section {
+    margin: 3rem 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #f0f0f0;
+}
+
+.tutorials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.tutorial-card {
+    background-color: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tutorial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.tutorial-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.tutorial-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+}
+
+.tutorial-content {
+    padding: 1.5rem;
+}
+
+.tutorial-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #f0f0f0;
+}
+
+.tutorial-content p {
+    color: #cccccc;
+    margin-bottom: 1.5rem;
+    min-height: 4.8em;
+    line-height: 1.6;
+}
+
+.tutorial-link {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #333;
+    color: #f0f0f0;
+    border-radius: 30px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 0.9rem;
+}
+
+.tutorial-link:hover {
+    background-color: #ff3333;
+    transform: translateY(-3px);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.pagination-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: #222;
+    color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination-btn:hover:not([disabled]) {
+    background-color: #ff3333;
+}
+
+.pagination-btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.page-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+    color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.page-number:hover {
+    background-color: #333;
+}
+
+.page-number.active {
+    background-color: #ff3333;
+}
+
+/* Newsletter section */
+.newsletter-section {
+    background-color: #111;
+    border-radius: 10px;
+    padding: 3rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.newsletter-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f0f0f0;
+}
+
+.newsletter-content p {
+    color: #cccccc;
+    margin-bottom: 2rem;
+}
+
+.newsletter-form {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 30px 0 0 30px;
+    background-color: #222;
+    color: #f0f0f0;
+    font-size: 1rem;
+}
+
+.newsletter-form button {
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    background-color: #ff3333;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+    background-color: #ff5555;
+}
+
+.newsletter-disclaimer {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Newsletter success message */
+.newsletter-success-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.newsletter-success-message.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.success-content {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform: translateY(20px);
+    transition: transform 0.3s;
+}
+
+.newsletter-success-message.show .success-content {
+    transform: translateY(0);
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.success-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #f0f0f0;
+}
+
+.success-content p {
+    color: #cccccc;
+    margin-bottom: 1.5rem;
+}
+
+.success-content button {
+    padding: 0.8rem 1.5rem;
+    background-color: #333;
+    color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.success-content button:hover {
+    background-color: #ff3333;
+}
+
+/* Placeholder styles for tutorial images */
+.tutorial-image[style*="rgb-tutorial.jpg"] {
+    background-color: #333;
+    background-image: linear-gradient(45deg, #ff0000, #ff6b6b);
+}
+
+.tutorial-image[style*="rgba-tutorial.jpg"] {
+    background-color: #333;
+    background-image: linear-gradient(45deg, rgba(255, 0, 0, 0.8), rgba(255, 107, 107, 0.8));
+}
+
+.tutorial-image[style*="gradient-tutorial.jpg"] {
+    background-color: #333;
+    background-image: linear-gradient(45deg, #ff0000, #0000ff);
+}
+
+.tutorial-image[style*="color-theory.jpg"] {
+    background-color: #333;
+    background-image: radial-gradient(circle, #ff0000, #00ff00, #0000ff);
+}
+
+.tutorial-image[style*="hex-tutorial.jpg"] {
+    background-color: #333;
+    background-image: linear-gradient(45deg, #333333, #666666);
+}
+
+.tutorial-image[style*="color-picker.jpg"] {
+    background-color: #333;
+    background-image: linear-gradient(to right, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+}
+
+.tutorial-image[style*="hsl-tutorial.jpg"] {
+    background-color: #333;
+    background-image: conic-gradient(from 0deg, red, yellow, lime, aqua, blue, magenta, red);
+}
+
+.tutorial-image[style*="color-schemes.jpg"] {
+    background-color: #333;
+    background-image: linear-gradient(to right, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb);
+}
+
+/* Continuing from line 561 */
+.tutorial-image[style*="color-animation.jpg"] {
+    background-color: #333;
+    background-image: linear-gradient(45deg, #ff0000, #0000ff, #ff0000);
+    background-size: 200% 200%;
+    animation: gradient-shift 5s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.tutorial-image[style*="dark-mode.jpg"] {
+    background-color: #333;
+    background-image: linear-gradient(to right, #111111, #333333);
+}
+
+.tutorial-image[style*="color-psychology.jpg"] {
+    background-color: #333;
+    background-image: linear-gradient(to right, #ff0000, #ffff00, #00ff00, #0000ff);
+}
+
+.tutorial-image[style*="accessibility.jpg"] {
+    background-color: #333;
+    background-image: linear-gradient(45deg, #333333, #666666, #999999);
+}
+
+.tutorial-image[style*="branding.jpg"] {
+    background-color: #333;
+    background-image: linear-gradient(to right, #ff3333, #ff9900, #3399ff);
+}
+
+/* Header and footer containers */
+#header, #footer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .tutorials-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .featured-info h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .tutorials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .featured-content {
+        flex-direction: column;
+    }
+    
+    .featured-image {
+        min-height: 300px;
+    }
+    
+    .featured-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    }
+    
+    .tutorials-hero h1 {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tutorials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .search-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    #tutorialSearch {
+        border-radius: 30px;
+    }
+    
+    #searchButton {
+        border-radius: 30px;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .newsletter-form input {
+        border-radius: 30px;
+    }
+    
+    .newsletter-form button {
+        border-radius: 30px;
+    }
+    
+    .featured-info {
+        padding: 2rem;
+    }
+    
+    .tutorials-hero {
+        padding: 3rem 1.5rem;
+    }
+    
+    .tutorials-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .tutorials-hero p {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .tutorials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-buttons {
+        gap: 0.5rem;
+    }
+    
+    .category-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .featured-info h2 {
+        font-size: 1.8rem;
+    }
+    
+    .featured-info p {
+        font-size: 1rem;
+    }
+    
+    .tutorials-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .tutorials-hero p {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .newsletter-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .newsletter-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .pagination {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .tutorial-image {
+        height: 180px;
+    }
+    
+    .featured-image {
+        min-height: 250px;
+    }
+    
+    .featured-info {
+        padding: 1.5rem;
+    }
+    
+    .featured-info h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+    
+    .featured-info p {
+        margin-bottom: 1.5rem;
+    }
+    
+    .featured-link {
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .tutorial-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .tutorial-content p {
+        min-height: auto;
+    }
+    
+    .tutorials-hero {
+        padding: 2.5rem 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .tutorials-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .page-number {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* JavaScript-related styles */
+.tutorial-card {
+    display: block;
+}
+
+.tutorial-card[style*="display: none"] {
+    display: none;
+}
+
+/* Fix for header and footer loading */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Ensure content doesn't shift when header/footer load */
+.tutorials-page {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Fix for images that might not load */
+.tutorial-image, .featured-image {
+    background-color: #222;
+}
+
+/* Hover effects for better interactivity */
+input:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 51, 51, 0.5);
+}
+
+.tutorial-card:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Accessibility improvements */
+.tutorial-tag, .featured-label, .reading-time, .publish-date {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Print styles */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    .tutorials-page {
+        max-width: 100%;
+    }
+    
+    .tutorial-card, .featured-content {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .newsletter-section, .pagination, #header, #footer {
+        display: none;
+    }
+    
+    .tutorials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

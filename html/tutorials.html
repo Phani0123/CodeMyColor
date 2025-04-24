@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorials - COLOR</title>
+
+    <link rel="stylesheet" href="/color/css/home.css">
+    <link rel="stylesheet" href="/color/css/tutorials.css"> 
+    
+    <script src="/color/js/tutorials.js" defer></script>
+    <script src="/color/js/script.js" defer></script>
+</head>
+<body>
+    <!-- header -->
+    <div id="header"></div>
+
+    <!-- Main content -->
+    <main class="tutorials-page">
+        <section class="tutorials-hero">
+            <div class="tutorials-hero-content">
+                <h1>Color Tutorials & Guides</h1>
+                <p>Learn how to use our tools and master color theory for your web projects.</p>
+                <div class="search-container">
+                    <input type="text" id="tutorialSearch" placeholder="Search for tutorials...">
+                    <button id="searchButton">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="tutorials-categories">
+            <div class="category-buttons">
+                <button class="category-btn active" data-category="all">All Tutorials</button>
+                <button class="category-btn" data-category="beginner">Beginner</button>
+                <button class="category-btn" data-category="intermediate">Intermediate</button>
+                <button class="category-btn" data-category="advanced">Advanced</button>
+                <button class="category-btn" data-category="design">Design</button>
+            </div>
+        </section>
+
+        <section class="featured-tutorial">
+            <div class="featured-content">
+                <div class="featured-info">
+                    <span class="featured-label">Featured Tutorial</span>
+                    <h2>Color Theory for Web Designers</h2>
+                    <p>Learn the fundamental principles of color theory and how to apply them to create stunning web designs that engage users and enhance your brand identity.</p>
+                    <div class="tutorial-meta">
+                        <span class="tutorial-tag design">Design</span>
+                        <span class="reading-time">15 min read</span>
+                    </div>
+                    <a href="#" class="featured-link">Read Tutorial</a>
+                </div>
+                <div class="featured-image" style="background-image: url('images/color-theory.jpg');">
+                    <div class="featured-overlay"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tutorials-grid-section">
+            <h2 class="section-title">All Tutorials</h2>
+            <div class="tutorials-grid">
+                <!-- Beginner Tutorials -->
+                <div class="tutorial-card" data-category="beginner">
+                    <div class="tutorial-image" style="background-image: url('images/rgb-tutorial.jpg');">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-tag beginner">Beginner</span>
+                        </div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>Getting Started with RGB Colors</h3>
+                        <p>Learn the basics of RGB color model and how to use our RGB generator tool.</p>
+                        <div class="tutorial-meta">
+                            <span class="reading-time">8 min read</span>
+                            <span class="publish-date">May 15, 2023</span>
+                        </div>
+                        <a href="#" class="tutorial-link">Read Tutorial</a>
+                    </div>
+                </div>
+
+                <div class="tutorial-card" data-category="beginner">
+                    <div class="tutorial-image" style="background-image: url('images/hex-tutorial.jpg');">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-tag beginner">Beginner</span>
+                        </div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>Understanding HEX Color Codes</h3>
+                        <p>Decode the mystery of hexadecimal color codes and learn how to use them in your projects.</p>
+                        <div class="tutorial-meta">
+                            <span class="reading-time">6 min read</span>
+                            <span class="publish-date">May 22, 2023</span>
+                        </div>
+                        <a href="#" class="tutorial-link">Read Tutorial</a>
+                    </div>
+                </div>
+
+                <div class="tutorial-card" data-category="beginner">
+                    <div class="tutorial-image" style="background-image: url('images/color-picker.jpg');">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-tag beginner">Beginner</span>
+                        </div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>How to Use the Color Picker Tool</h3>
+                        <p>A step-by-step guide to using our color picker tool to find the perfect colors for your website.</p>
+                        <div class="tutorial-meta">
+                            <span class="reading-time">5 min read</span>
+                            <span class="publish-date">June 3, 2023</span>
+                        </div>
+                        <a href="#" class="tutorial-link">Read Tutorial</a>
+                    </div>
+                </div>
+
+                <!-- Intermediate Tutorials -->
+                <div class="tutorial-card" data-category="intermediate">
+                    <div class="tutorial-image" style="background-image: url('images/rgba-tutorial.jpg');">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-tag intermediate">Intermediate</span>
+                        </div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>Working with Transparency in RGBA</h3>
+                        <p>Discover how to create and use semi-transparent colors with RGBA for overlays and effects.</p>
+                        <div class="tutorial-meta">
+                            <span class="reading-time">10 min read</span>
+                            <span class="publish-date">June 12, 2023</span>
+                        </div>
+                        <a href="#" class="tutorial-link">Read Tutorial</a>
+                    </div>
+                </div>
+
+                <div class="tutorial-card" data-category="intermediate">
+                    <div class="tutorial-image" style="background-image: url('images/hsl-tutorial.jpg');">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-tag intermediate">Intermediate</span>
+                        </div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>HSL Color Model Explained</h3>
+                        <p>Learn how the HSL color model works and why it's often more intuitive than RGB for designers.</p>
+                        <div class="tutorial-meta">
+                            <span class="reading-time">12 min read</span>
+                            <span class="publish-date">June 25, 2023</span>
+                        </div>
+                        <a href="#" class="tutorial-link">Read Tutorial</a>
+                    </div>
+                </div>
+
+                <div class="tutorial-card" data-category="intermediate">
+                    <div class="tutorial-image" style="background-image: url('images/color-schemes.jpg');">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-tag intermediate">Intermediate</span>
+                        </div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>Creating Effective Color Schemes</h3>
+                        <p>Learn how to create harmonious color schemes that work well together for your web projects.</p>
+                        <div class="tutorial-meta">
+                            <span class="reading-time">14 min read</span>
+                            <span class="publish-date">July 8, 2023</span>
+                        </div>
+                        <a href="#" class="tutorial-link">Read Tutorial</a>
+                    </div>
+                </div>
+
+                <!-- Advanced Tutorials -->
+                <div class="tutorial-card" data-category="advanced">
+                    <div class="tutorial-image" style="background-image: url('images/gradient-tutorial.jpg');">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-tag advanced">Advanced</span>
+                        </div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>Creating Complex Gradients</h3>
+                        <p>Master the art of creating multi-color gradients for stunning web designs and backgrounds.</p>
+                        <div class="tutorial-meta">
+                            <span class="reading-time">15 min read</span>
+                            <span class="publish-date">July 20, 2023</span>
+                        </div>
+                        <a href="#" class="tutorial-link">Read Tutorial</a>
+                    </div>
+                </div>
+
+                <div class="tutorial-card" data-category="advanced">
+                    <div class="tutorial-image" style="background-image: url('images/color-animation.jpg');">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-tag advanced">Advanced</span>
+                        </div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>Animating Colors with CSS</h3>
+                        <p>Learn techniques for creating smooth color transitions and animations using CSS.</p>
+                        <div class="tutorial-meta">
+                            <span class="reading-time">18 min read</span>
+                            <span class="publish-date">August 5, 2023</span>
+                        </div>
+                        <a href="#" class="tutorial-link">Read Tutorial</a>
+                    </div>
+                </div>
+
+                <div class="tutorial-card" data-category="advanced">
+                    <div class="tutorial-image" style="background-image: url('images/dark-mode.jpg');">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-tag advanced">Advanced</span>
+                        </div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>Implementing Dark Mode with CSS Variables</h3>
+                        <p>A comprehensive guide to creating a dark mode theme using CSS custom properties.</p>
+                        <div class="tutorial-meta">
+                            <span class="reading-time">20 min read</span>
+                            <span class="publish-date">August 18, 2023</span>
+                        </div>
+                        <a href="#" class="tutorial-link">Read Tutorial</a>
+                    </div>
+                </div>
+
+                <!-- Design Tutorials -->
+                <div class="tutorial-card" data-category="design">
+                    <div class="tutorial-image" style="background-image: url('images/color-psychology.jpg');">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-tag design">Design</span>
+                        </div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>Color Psychology in Web Design</h3>
+                        <p>Understand how colors affect user emotions and behavior, and how to use this in your designs.</p>
+                        <div class="tutorial-meta">
+                            <span class="reading-time">16 min read</span>
+                            <span class="publish-date">September 2, 2023</span>
+                        </div>
+                        <a href="#" class="tutorial-link">Read Tutorial</a>
+                    </div>
+                </div>
+
+                <div class="tutorial-card" data-category="design">
+                    <div class="tutorial-image" style="background-image: url('images/accessibility.jpg');">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-tag design">Design</span>
+                        </div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>Color Accessibility Guidelines</h3>
+                        <p>Learn how to create color schemes that are accessible to users with color vision deficiencies.</p>
+                        <div class="tutorial-meta">
+                            <span class="reading-time">14 min read</span>
+                            <span class="publish-date">September 15, 2023</span>
+                        </div>
+                        <a href="#" class="tutorial-link">Read Tutorial</a>
+                    </div>
+                </div>
+
+                <div class="tutorial-card" data-category="design">
+                    <div class="tutorial-image" style="background-image: url('images/branding.jpg');">
+                        <div class="tutorial-overlay">
+                            <span class="tutorial-tag design">Design</span>
+                        </div>
+                    </div>
+                    <div class="tutorial-content">
+                        <h3>Color in Branding and Identity</h3>
+                        <p>Explore how to use color effectively in brand identity and maintain consistency across platforms.</p>
+                        <div class="tutorial-meta">
+                            <span class="reading-time">17 min read</span>
+                            <span class="publish-date">October 1, 2023</span>
+                        </div>
+                        <a href="#" class="tutorial-link">Read Tutorial</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button class="pagination-btn" disabled>Previous</button>
+                <div class="page-numbers">
+                    <button class="page-number active">1</button>
+                    <button class="page-number">2</button>
+                    <button class="page-number">3</button>
+                </div>
+                <button class="pagination-btn">Next</button>
+            </div>
+        </section>
+
+        <section class="newsletter-section">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter to receive new tutorials, color tips, and tool updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p class="newsletter-disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <div id="footer"></div>
+
+    <!-- Newsletter success message -->
+    <div class="newsletter-success-message" id="newsletterSuccessMessage">
+        <div class="success-content">
+            <div class="success-icon">✓</div>
+            <h3>Subscription Successful!</h3>
+            <p>Thank you for subscribing to our newsletter. You'll start receiving updates soon.</p>
+            <button id="closeNewsletterMessage">Close</button>
+        </div>
+    </div>
+</body>
+</html>

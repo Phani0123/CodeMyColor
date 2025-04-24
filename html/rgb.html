@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB Color Generator</title>
+    <link rel="stylesheet" href="/color/css/rgb.css">
+
+    <script src="/color/js/rgb.js"></script>
+    <script src="/color/js/script.js"></script>
+</head>
+<body>
+    <!-- header -->
+    <div id="header"></div>
+
+    <div class="container">
+        
+        
+        <!-- Color picker section -->
+        <section class="color-picker-section">
+            <div class="color-display">
+                <div class="color-preview" id="colorPreview"></div>
+                <div class="color-info">
+                    <div class="color-code-container">
+                        <h3>RGB Code</h3>
+                        <div class="code-display">
+                            <code id="rgbCode">rgb(255, 0, 0)</code>
+                            <button id="copyRgb" class="copy-btn" title="Copy RGB code">
+                                <i class="copy-icon">📋</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="color-code-container">
+                        <h3>HEX Code</h3>
+                        <div class="code-display">
+                            <code id="hexCode">#FF0000</code>
+                            <button id="copyHex" class="copy-btn" title="Copy HEX code">
+                                <i class="copy-icon">📋</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="color-code-container">
+                        <h3>HSL Code</h3>
+                        <div class="code-display">
+                            <code id="hslCode">hsl(0, 100%, 50%)</code>
+                            <button id="copyHsl" class="copy-btn" title="Copy HSL code">
+                                <i class="copy-icon">📋</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="color-code-container">
+                        <h3>CSS Variable</h3>
+                        <div class="code-display">
+                            <code id="cssVarCode">--color-primary: rgb(255, 0, 0);</code>
+                            <button id="copyCssVar" class="copy-btn" title="Copy CSS variable">
+                                <i class="copy-icon">📋</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="color-controls">
+                <!-- RGB Controls -->
+                <div class="format-section active" id="rgb-controls">
+                    <div class="sliders">
+                        <div class="slider-container">
+                            <label for="redSlider">Red (R) <span id="redValue">255</span></label>
+                            <input type="range" id="redSlider" min="0" max="255" value="255" class="color-slider red-slider">
+                        </div>
+                        <div class="slider-container">
+                            <label for="greenSlider">Green (G) <span id="greenValue">0</span></label>
+                            <input type="range" id="greenSlider" min="0" max="255" value="0" class="color-slider green-slider">
+                        </div>
+                        <div class="slider-container">
+                            <label for="blueSlider">Blue (B) <span id="blueValue">0</span></label>
+                            <input type="range" id="blueSlider" min="0" max="255" value="0" class="color-slider blue-slider">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HEX Controls -->
+                <div class="format-section" id="hex-controls">
+                    <div class="sliders">
+                        <div class="slider-container">
+                            <label for="hexInput">HEX Value</label>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <input type="text" id="hexInput" value="#FF0000" style="flex: 1; padding: 0.5rem; background: #222; color: #fff; border: none; border-radius: 4px;">
+                                <button id="applyHex" class="action-btn" style="padding: 0.5rem 1rem;">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HSL Controls -->
+                <div class="format-section" id="hsl-controls">
+                    <div class="sliders">
+                        <div class="slider-container">
+                            <label for="hueSlider">Hue (H) <span id="hueValue">0</span>°</label>
+                            <input type="range" id="hueSlider" min="0" max="360" value="0" class="color-slider hue-slider">
+                        </div>
+                        <div class="slider-container">
+                            <label for="saturationSlider">Saturation (S) <span id="saturationValue">100</span>%</label>
+                            <input type="range" id="saturationSlider" min="0" max="100" value="100" class="color-slider saturation-slider">
+                        </div>
+                        <div class="slider-container">
+                            <label for="lightnessSlider">Lightness (L) <span id="lightnessValue">50</span>%</label>
+                            <input type="range" id="lightnessSlider" min="0" max="100" value="50" class="color-slider lightness-slider">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="color-actions">
+                    <button id="randomColor" class="action-btn">
+                        <span>🔄</span> Random Color
+                    </button>
+                    <button id="copyAll" class="action-btn">
+                        <span>📋</span> Copy All Codes
+                    </button>
+                    <button id="resetColor" class="action-btn">
+                        <span>🔄</span> Reset Color
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Color presets section -->
+        <section class="color-presets">
+            <h2>Color Presets</h2>
+            <p>Click on any color to select it</p>
+            
+            <div class="preset-categories">
+                <button class="category-btn active" data-category="basic">Basic Colors</button>
+                <button class="category-btn" data-category="red">Reds</button>
+                <button class="category-btn" data-category="green">Greens</button>
+                <button class="category-btn" data-category="blue">Blues</button>
+                <button class="category-btn" data-category="neutral">Neutrals</button>
+            </div>
+            
+            <div class="preset-container" id="presetContainer">
+                <!-- Basic Colors -->
+                <div class="color-preset" style="background-color: rgb(255, 0, 0);" data-rgb="255,0,0" data-category="basic red" title="Red"></div>
+                <div class="color-preset" style="background-color: rgb(0, 255, 0);" data-rgb="0,255,0" data-category="basic green" title="Green"></div>
+                <div class="color-preset" style="background-color: rgb(0, 0, 255);" data-rgb="0,0,255" data-category="basic blue" title="Blue"></div>
+                <div class="color-preset" style="background-color: rgb(255, 255, 0);" data-rgb="255,255,0" data-category="basic" title="Yellow"></div>
+                <div class="color-preset" style="background-color: rgb(255, 0, 255);" data-rgb="255,0,255" data-category="basic" title="Magenta"></div>
+                <div class="color-preset" style="background-color: rgb(0, 255, 255);" data-rgb="0,255,255" data-category="basic" title="Cyan"></div>
+                <div class="color-preset" style="background-color: rgb(255, 255, 255);" data-rgb="255,255,255" data-category="basic neutral" title="White"></div>
+                <div class="color-preset" style="background-color: rgb(0, 0, 0);" data-rgb="0,0,0" data-category="basic neutral" title="Black"></div>
+                
+                <!-- Reds -->
+                <div class="color-preset" style="background-color: rgb(255, 160, 122);" data-rgb="255,160,122" data-category="red" title="Light Salmon"></div>
+                <div class="color-preset" style="background-color: rgb(250, 128, 114);" data-rgb="250,128,114" data-category="red" title="Salmon"></div>
+                <div class="color-preset" style="background-color: rgb(233, 150, 122);" data-rgb="233,150,122" data-category="red" title="Dark Salmon"></div>
+                <div class="color-preset" style="background-color: rgb(240, 128, 128);" data-rgb="240,128,128" data-category="red" title="Light Coral"></div>
+                <div class="color-preset" style="background-color: rgb(205, 92, 92);" data-rgb="205,92,92" data-category="red" title="Indian Red"></div>
+                <div class="color-preset" style="background-color: rgb(220, 20, 60);" data-rgb="220,20,60" data-category="red" title="Crimson"></div>
+                <div class="color-preset" style="background-color: rgb(178, 34, 34);" data-rgb="178,34,34" data-category="red" title="Firebrick"></div>
+                <div class="color-preset" style="background-color: rgb(139, 0, 0);" data-rgb="139,0,0" data-category="red" title="Dark Red"></div>
+                
+                <!-- Greens -->
+                <div class="color-preset" style="background-color: rgb(173, 255, 47);" data-rgb="173,255,47" data-category="green" title="Green Yellow"></div>
+                <div class="color-preset" style="background-color: rgb(127, 255, 0);" data-rgb="127,255,0" data-category="green" title="Chartreuse"></div>
+                <div class="color-preset" style="background-color: rgb(124, 252, 0);" data-rgb="124,252,0" data-category="green" title="Lawn Green"></div>
+                <div class="color-preset" style="background-color: rgb(50, 205, 50);" data-rgb="50,205,50" data-category="green" title="Lime Green"></div>
+                <div class="color-preset" style="background-color: rgb(34, 139, 34);" data-rgb="34,139,34" data-category="green" title="Forest Green"></div>
+                <div class="color-preset" style="background-color: rgb(0, 128, 0);" data-rgb="0,128,0" data-category="green" title="Green"></div>
+                <div class="color-preset" style="background-color: rgb(0, 100, 0);" data-rgb="0,100,0" data-category="green" title="Dark Green"></div>
+                <div class="color-preset" style="background-color: rgb(154, 205, 50);" data-rgb="154,205,50" data-category="green" title="Yellow Green"></div>
+                
+                <!-- Blues -->
+                <div class="color-preset" style="background-color: rgb(173, 216, 230);" data-rgb="173,216,230" data-category="blue" title="Light Blue"></div>
+                <div class="color-preset" style="background-color: rgb(135, 206, 235);" data-rgb="135,206,235" data-category="blue" title="Sky Blue"></div>
+                <div class="color-preset" style="background-color: rgb(30, 144, 255);" data-rgb="30,144,255" data-category="blue" title="Dodger Blue"></div>
+                <div class="color-preset" style="background-color: rgb(65, 105, 225);" data-rgb="65,105,225" data-category="blue" title="Royal Blue"></div>
+                <div class="color-preset" style="background-color: rgb(0, 0, 205);" data-rgb="0,0,205" data-category="blue" title="Medium Blue"></div>
+                <div class="color-preset" style="background-color: rgb(0, 0, 139);" data-rgb="0,0,139" data-category="blue" title="Dark Blue"></div>
+                <div class="color-preset" style="background-color: rgb(0, 0, 128);" data-rgb="0,0,128" data-category="blue" title="Navy"></div>
+                <div class="color-preset" style="background-color: rgb(25, 25, 112);" data-rgb="25,25,112" data-category="blue" title="Midnight Blue"></div>
+                
+                <!-- Neutrals -->
+                <div class="color-preset" style="background-color: rgb(220, 220, 220);" data-rgb="220,220,220" data-category="neutral" title="Gainsboro"></div>
+                <div class="color-preset" style="background-color: rgb(211, 211, 211);" data-rgb="211,211,211" data-category="neutral" title="Light Gray"></div>
+                <div class="color-preset" style="background-color: rgb(169, 169, 169);" data-rgb="169,169,169" data-category="neutral" title="Dark Gray"></div>
+                <div class="color-preset" style="background-color: rgb(128, 128, 128);" data-rgb="128,128,128" data-category="neutral" title="Gray"></div>
+                <div class="color-preset" style="background-color: rgb(105, 105, 105);" data-rgb="105,105,105" data-category="neutral" title="Dim Gray"></div>
+                <div class="color-preset" style="background-color: rgb(47, 79, 79);" data-rgb="47,79,79" data-category="neutral" title="Dark Slate Gray"></div>
+                <div class="color-preset" style="background-color: rgb(245, 245, 245);" data-rgb="245,245,245" data-category="neutral" title="White Smoke"></div>
+                <div class="color-preset" style="background-color: rgb(255, 250, 250);" data-rgb="255,250,250" data-category="neutral" title="Snow"></div>
+            </div>
+        </section>
+        
+        <!-- Color patterns section -->
+        <section class="color-patterns">
+            <h2>Color Patterns</h2>
+            <p>Common RGB color combinations for web design</p>
+            
+            <div class="patterns-container">
+                <div class="pattern-card">
+                    <h3>Monochromatic Red</h3>
+                    <div class="pattern-preview">
+                        <div class="pattern-color" style="background-color: rgb(255, 0, 0);" title="rgb(255, 0, 0)"></div>
+                        <div class="pattern-color" style="background-color: rgb(204, 0, 0);" title="rgb(204, 0, 0)"></div>
+                        <div class="pattern-color" style="background-color: rgb(153, 0, 0);" title="rgb(153, 0, 0)"></div>
+                        <div class="pattern-color" style="background-color: rgb(102, 0, 0);" title="rgb(102, 0, 0)"></div>
+                        <div class="pattern-color" style="background-color: rgb(51, 0, 0);" title="rgb(51, 0, 0)"></div>
+                    </div>
+                </div>
+                <div class="pattern-card">
+                    <h3>Complementary</h3>
+                    <div class="pattern-preview">
+                        <div class="pattern-color" style="background-color: rgb(255, 0, 0);" title="rgb(255, 0, 0)"></div>
+                        <div class="pattern-color" style="background-color: rgb(0, 255, 255);" title="rgb(0, 255, 255)"></div>
+                    </div>
+                </div>
+                <div class="pattern-card">
+                    <h3>Analogous</h3>
+                    <div class="pattern-preview">
+                        <div class="pattern-color" style="background-color: rgb(255, 0, 0);" title="rgb(255, 0, 0)"></div>
+                        <div class="pattern-color" style="background-color: rgb(255, 128, 0);" title="rgb(255, 128, 0)"></div>
+                        <div class="pattern-color" style="background-color: rgb(255, 255, 0);" title="rgb(255, 255, 0)"></div>
+                    </div>
+                </div>
+                <div class="pattern-card">
+                    <h3>Triadic</h3>
+                    <div class="pattern-preview">
+                        <div class="pattern-color" style="background-color: rgb(255, 0, 0);" title="rgb(255, 0, 0)"></div>
+                        <div class="pattern-color" style="background-color: rgb(0, 255, 0);" title="rgb(0, 255, 0)"></div>
+                        <div class="pattern-color" style="background-color: rgb(0, 0, 255);" title="rgb(0, 0, 255)"></div>
+                    </div>
+                </div>
+                <div class="pattern-card">
+                    <h3>Dark Mode</h3>
+                    <div class="pattern-preview">
+                        <div class="pattern-color" style="background-color: rgb(18, 18, 18);" title="rgb(18, 18, 18)"></div>
+                        <div class="pattern-color" style="background-color: rgb(31, 31, 31);" title="rgb(31, 31, 31)"></div>
+                        <div class="pattern-color" style="background-color: rgb(255, 69, 69);" title="rgb(255, 69, 69)"></div>
+                        <div class="pattern-color" style="background-color: rgb(255, 255, 255);" title="rgb(255, 255, 255)"></div>
+                    </div>
+                </div>
+                <div class="pattern-card">
+                    <h3>Pastel</h3>
+                    <div class="pattern-preview">
+                        <div class="pattern-color" style="background-color: rgb(255, 182, 193);" title="rgb(255, 182, 193)"></div>
+                        <div class="pattern-color" style="background-color: rgb(255, 255, 224);" title="rgb(255, 255, 224)"></div>
+                        <div class="pattern-color" style="background-color: rgb(224, 255, 255);" title="rgb(224, 255, 255)"></div>
+                        <div class="pattern-color" style="background-color: rgb(216, 191, 216);" title="rgb(216, 191, 216)"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Usage examples section -->
+        <section class="usage-examples">
+            <h2>How to Use RGB Colors in CSS</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h3>Text Color</h3>
+                    <pre><code>color: rgb(255, 0, 0);</code></pre>
+                    <div class="example-preview">
+                        <p style="color: rgb(255, 0, 0);">This text is colored using RGB.</p>
+                    </div>
+                </div>
+                <div class="example-card">
+                    <h3>Background Color</h3>
+                    <pre><code>background-color: rgb(255, 0, 0);</code></pre>
+                    <div class="example-preview" style="background-color: rgb(255, 0, 0); color: white; padding: 10px;">
+                        This element has an RGB background color.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <h3>Box Shadow</h3>
+                    <pre><code>box-shadow: 0 5px 15px rgb(255, 0, 0);</code></pre>
+                    <div class="example-preview" style="background-color: #222; padding: 10px; box-shadow: 0 5px 15px rgb(255, 0, 0);">
+                        This element has a red shadow.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <h3>Border</h3>
+                    <pre><code>border: 3px solid rgb(255, 0, 0);</code></pre>
+                    <div class="example-preview" style="border: 3px solid rgb(255, 0, 0); padding: 10px;">
+                        This element has a red border.
+                    </div>
+                </div>
+                <div class="example-card">
+                    <h3>Text Shadow</h3>
+                    <pre><code>text-shadow: 2px 2px 4px rgb(255, 0, 0);</code></pre>
+                    <div class="example-preview">
+                        <p style="font-size: 1.2rem; font-weight: bold; text-shadow: 2px 2px 4px rgb(255, 0, 0);">This text has a red shadow.</p>
+                    </div>
+                </div>
+                <div class="example-card">
+                    <h3>Gradient</h3>
+                    <pre><code>background: linear-gradient(
+                        to right,
+                        rgb(255, 0, 0),
+                        rgb(0, 0, 255)
+                        );</code></pre>
+                    <div class="example-preview" style="background: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 0, 255)); color: white; padding: 10px;">
+                        This element has a gradient background.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Copy notification -->
+    <div class="copy-notification" id="copyNotification">
+        <i class="check-icon">✓</i> Copied to clipboard!
+    </div>
+
+    <!-- footer -->
+    <div id="footer"></div>
+</body>
+</html></qodoArtifact>
+
+
+
